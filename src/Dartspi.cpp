@@ -33,9 +33,10 @@ bool pointWithinCircle(Point aPoint, Point center, unsigned int radius) {
 }
 
 size_t countPointsInCircle(std::vector<Point> points, unsigned int side) {
-    Point center{side/2, side/2};
-    auto c = std::count_if(points.begin(), points.end(), [&center, side](Point aPoint) {
-        return pointWithinCircle(aPoint, center, side/2);
+    int radius = side / 2;
+    Point center{radius, radius};
+    auto c = std::count_if(points.begin(), points.end(), [&center, radius](Point aPoint) {
+        return pointWithinCircle(aPoint, center, radius);
     });
     return c;
 }
