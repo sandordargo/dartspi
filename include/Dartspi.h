@@ -2,6 +2,7 @@
 
 namespace Dartspi {
 
-double calculate();
+double calculate(unsigned int numberOfDartsInCircle, 
+                 unsigned int totalNumberOfDarts);
 
 }

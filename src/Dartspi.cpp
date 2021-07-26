@@ -3,8 +3,9 @@
 
 namespace Dartspi {
 
-double calculate() {
-    return 3.1399;
+double calculate(unsigned int numberOfDartsInCircle, 
+                 unsigned int totalNumberOfDarts) {
+    return (static_cast<double>(numberOfDartsInCircle) / totalNumberOfDarts) * 4;
 }
 
 }
