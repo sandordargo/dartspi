@@ -9,10 +9,11 @@ namespace Dartspi {
 double calculatePi(unsigned int numberOfDartsInCircle, 
                    unsigned int totalNumberOfDarts);
 
-std::vector<Point> generate(size_t numberOfPoints, unsigned int side);
+std::vector<Point> generatePointsWithinEnclosingSquare(size_t numberOfPoints, 
+                                                       unsigned int radius);
 
 bool pointWithinCircle(Point aPoint, Point center, unsigned int radius);
 
-size_t countPointsInCircle(std::vector<Point>, unsigned int side);
+size_t countPointsInCircle(std::vector<Point>, unsigned int radius);
 
 }

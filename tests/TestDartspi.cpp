@@ -14,10 +14,10 @@ void assertPointIsWithinBoundaries(Point point, unsigned int side) {
 }
 
 TEST(DartspiTest, acceptanceTest) {
-    unsigned int side {1000U};
+    unsigned int radius {500U};
     size_t numberOfPoints{1000000U};
-    std::vector<Point> points = Dartspi::generate(numberOfPoints, side);
-    auto numberOfDartsInCircle = Dartspi::countPointsInCircle(points, side);
+    std::vector<Point> points = Dartspi::generatePointsWithinEnclosingSquare(numberOfPoints, radius);
+    auto numberOfDartsInCircle = Dartspi::countPointsInCircle(points, radius);
     
     ASSERT_NEAR(std::numbers::pi_v<double>, Dartspi::calculatePi(numberOfDartsInCircle, numberOfPoints), 0.05);
 }
@@ -30,12 +30,12 @@ TEST(DartspiTest, PiIsCalculatedWithHardcodedNumbers) {
 }
 
 TEST(DartspiTest, AllGeneratedPointsAreWithinBoundaries) {
-    unsigned int side {100U};
+    unsigned int radius {50U};
     size_t numberOfPoints{1000U};
-    std::vector<Point> points = Dartspi::generate(numberOfPoints, side);
+    std::vector<Point> points = Dartspi::generatePointsWithinEnclosingSquare(numberOfPoints, radius);
 
     for(const auto& point: points) {
-        assertPointIsWithinBoundaries(point, side);
+        assertPointIsWithinBoundaries(point, radius*2);
     }
 }
 
