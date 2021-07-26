@@ -11,4 +11,6 @@ double calculate(unsigned int numberOfDartsInCircle,
 
 std::vector<Point> generate(size_t numberOfPoints, unsigned int side);
 
+bool pointWithinCircle(Point aPoint, Point center, unsigned int radius);
+
 }

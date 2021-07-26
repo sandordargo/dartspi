@@ -1,6 +1,7 @@
 #include "Dartspi.h"
 
 #include <random>
+#include <cmath>
 
 namespace Dartspi {
 
@@ -21,6 +22,11 @@ std::vector<Point> generate(size_t numberOfPoints, unsigned int side) {
     }
 
     return points;
+}
+
+bool pointWithinCircle(Point aPoint, Point center, unsigned int radius) {
+    auto distance = ::sqrt(::pow(aPoint.x - center.x, 2) + ::pow(aPoint.y - center.y, 2));
+    return distance < radius;
 }
 
 }

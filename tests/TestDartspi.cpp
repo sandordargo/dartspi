@@ -28,3 +28,28 @@ TEST(DartspiTest, AllGeneratedPointsAreWithinBoundaries) {
         assertPointIsWithinBoundaries(point, side);
     }
 }
+
+TEST(DartspiTest, PointIsWithinCircle) {
+    Point aPoint{51, 49};
+    Point center{50, 50};
+    unsigned int radius{50};
+
+    ASSERT_TRUE(Dartspi::pointWithinCircle(aPoint, center, radius));
+}
+
+TEST(DartspiTest, PointIsOutsideCircle) {
+    Point aPoint{0, 0};
+    Point center{50, 50};
+    unsigned int radius{50};
+
+    ASSERT_FALSE(Dartspi::pointWithinCircle(aPoint, center, radius));
+}
+
+TEST(DartspiTest, PointOnCircleIsConsideredOutside) {
+    Point aPoint{50, 0};
+    Point center{50, 50};
+    unsigned int radius{50};
+
+    ASSERT_FALSE(Dartspi::pointWithinCircle(aPoint, center, radius));
+}
+
