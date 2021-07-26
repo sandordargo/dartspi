@@ -6,8 +6,8 @@
 
 namespace Dartspi {
 
-double calculate(unsigned int numberOfDartsInCircle, 
-                 unsigned int totalNumberOfDarts);
+double calculatePi(unsigned int numberOfDartsInCircle, 
+                   unsigned int totalNumberOfDarts);
 
 std::vector<Point> generate(size_t numberOfPoints, unsigned int side);
 
