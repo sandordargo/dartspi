@@ -13,6 +13,16 @@ void assertPointIsWithinBoundaries(Point point, unsigned int side) {
     EXPECT_TRUE(point.y <= side);
 }
 
+TEST(DartspiTest, acceptanceTest) {
+    unsigned int side {1000U};
+    size_t numberOfPoints{1000000U};
+    std::vector<Point> points = Dartspi::generate(numberOfPoints, side);
+    auto numberOfDartsInCircle = Dartspi::countPointsInCircle(points, side);
+    
+    ASSERT_NEAR(std::numbers::pi_v<double>, Dartspi::calculate(numberOfDartsInCircle, numberOfPoints), 0.05);
+}
+
+
 TEST(DartspiTest, PiIsCalculatedWithHardcodedNumbers) {
     unsigned int numberOfDartsInCircle {785U};
     unsigned int totalNumberOfDarts {1'000U};
