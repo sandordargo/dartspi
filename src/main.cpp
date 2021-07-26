@@ -1,6 +1,5 @@
 #include "Dartspi.h"
 
 int main() {
-    Dartspi o;
-    o.hello();
+  return 0;   
 }

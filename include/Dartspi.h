@@ -1,6 +1,7 @@
 #pragma once
 
-class Dartspi {
-public:
-  void hello();
-};
+namespace Dartspi {
+
+double calculate();
+
+}

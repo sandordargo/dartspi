@@ -10,5 +10,6 @@ include_directories(../include)
 
 add_executable(${BINARY} ${TEST_SOURCES})
 target_link_libraries(${BINARY} PUBLIC ${CONAN_LIBS})
+target_link_libraries(${BINARY} PUBLIC Dartspi_src_lib)
 
 add_test(NAME ${BINARY} COMMAND ${BINARY})
